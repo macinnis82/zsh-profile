@@ -1,0 +1,31 @@
+# Java
+alias Java8='export JAVA_HOME=$(/usr/libexec/java_home -v 1.8); java -version'
+alias Java11='export JAVA_HOME=$(/usr/libexec/java_home -v 11.0); java -version'
+alias Java17='export JAVA_HOME=$(/usr/libexec/java_home -v 17.0); java -version'
+
+# Spring Boot Commands
+alias mci='mvn clean install'
+alias mci-no-tests='mvn clean install -DskipTests'
+alias mci-no-docker='mvn clean install -Ddockerfile.skip=true'
+alias mci-no-tests-no-docker='mvn clean install -DskipTests -Ddockerfile.skip=true'
+alias mciu='mvn clean install -U'
+alias mciu-no-tests='mvn clean install -U -DskipTests'
+alias mciu-no-docker='mvn clean install -U -Ddockerfile.skip=true'
+alias mciu-no-tests-no-docker='mvn clean install -U -DskipTests -Ddockerfile.skip=true'
+alias msbr='mvn spring-boot:run -Dspring-boot.run.jvmArguments="-Duser.timezone=UTC"'
+alias dependency='mvn dependency-check:check'
+alias tree='mvn dependency:tree'
+alias mcp='mvn clean package'
+alias mcp-no-tests='mvn clean package -DskipTests'
+alias mcp-no-docker='mvn clean package -Ddockerfile.skip=true'
+alias mcp-no-tests-no-docker='mvn clean package -DskipTests -Ddockerfile.skip=true'
+alias mcpu='mvn clean package -U'
+alias mcpu-no-tests='mvn clean package -U -DskipTests'
+alias mcpu-no-docker='mvn clean package -U -Ddockerfile.skip=true'
+alias mcpu-no-tests-no-docker='mvn clean package -U -DskipTests -Ddockerfile.skip=true'
+
+# DynamoDB Local
+alias runDB='java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -port 8888 -sharedDb'
+
+# Localstack
+alias runStack='docker-compose up'
